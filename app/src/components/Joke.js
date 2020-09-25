@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Joke = (props) => {
 
+    const classes = useStyles();
+
+
 
     useEffect(() => {
         props.fetchData();
@@ -31,8 +34,8 @@ const Joke = (props) => {
         return <p>Loading...</p>
     }
     return (
-        <div className="container">
-            <Typography variant="h5" gutterBottom>{props.quote}</Typography>
+        <div className={classes.root}>
+        <Typography variant="h5" gutterBottom>{props.quote}</Typography>
             <Button variant="contained" color="secondary" onClick={props.fetchData}>New Quote</Button>
 
         </div>
